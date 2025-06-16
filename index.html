@@ -70,16 +70,29 @@
     }
 
     .game-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-8px);
       box-shadow: 0 0 30px var(--card-shadow-color);
     }
+
+    .store-icon {
+      height: 30px;
+      width: auto;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 0.8;
+    }
+
+    .store-icon-link:hover .store-icon {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
   </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
 <header class="text-center py-16 px-4">
   <h1 class="font-title text-4xl md:text-6xl text-white font-bold uppercase tracking-wider">
-    <a href="https://play.google.com/store/apps/dev?id=5609148763993571299" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-x-4 transition-transform duration-300 ease-in-out hover:scale-105" title="Puzzle Game Universe">
+    <a href="https://play.google.com/store/apps/dev?id=5609148763993571299" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-x-4 transition-transform duration-300 ease-in-out hover:scale-105" title="The Under Cats">
       <img src="https://play-lh.googleusercontent.com/2GPZQk20ItKUFiq6ljOWCD9-q6TD2IdBLWqezpGUWR3j_b_NxN0NlObSGhU5Xdr0UZ1c=s94-rw" alt="Logo" class="h-12 md:h-16 rounded-lg shadow-lg bg-white/10 p-1">
       <span class="main-title">The Under Cats</span>
     </a>
@@ -101,13 +114,14 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    
+
     const games = [
       {
         id: 1,
         title: 'Triple Meow: Tile Cats',
         imageUrl: 'https://play-lh.googleusercontent.com/umn96HJbO1Ri9Lx1ZxFKKBLIYMDJA8O6jbHHY5gGEoD8uNhALt18bTFSmgYc5bsVlA=w240-h480-rw',
-        gameUrl: 'https://play.google.com/store/apps/details?id=com.UnderCats.TileCat'
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.UnderCats.TileCat',
+        iosUrl: '' // iOS link is empty, so the icon will not show
       }
     ];
 
@@ -117,16 +131,30 @@
       if (!gameGrid) return;
 
       const gameCardsHTML = games.map(game => {
+        const androidIcon = `
+          <a href="${game.androidUrl}" target="_blank" rel="noopener noreferrer" title="Get on Google Play" class="store-icon-link">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Get on Google Play" class="store-icon" style="height: 40px;">
+          </a>
+        `;
+
+        const iosIcon = `
+          <a href="${game.iosUrl}" target="_blank" rel="noopener noreferrer" title="Download on the App Store" class="store-icon-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" class="store-icon" style="height: 40px;">
+          </a>
+        `;
+
         return `
-                        <article class="game-card group rounded-lg overflow-hidden relative shadow-lg w-[300px]">
-                            <a href="${game.gameUrl}" target="_blank" rel="noopener noreferrer" title="Play ${game.title}">
-                                <img src="${game.imageUrl}" alt="Image ${game.title}" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a2e/FFFFFF?text=Image+Not+Found';">
-                                <div class="absolute inset-x-0 bottom-0 p-4 pt-12 text-center bg-gradient-to-t from-black/80 to-transparent">
-                                    <h3 class="text-white text-lg font-bold font-body drop-shadow-lg">${game.title}</h3>
-                                </div>
-                            </a>
-                        </article>
-                    `;
+          <article class="game-card group rounded-lg overflow-hidden relative shadow-lg w-[300px] flex flex-col">
+              <img src="${game.imageUrl}" alt="Image ${game.title}" class="w-full h-64 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1a1a2e/FFFFFF?text=Image+Not+Found';">
+              <div class="p-4 flex flex-col flex-grow">
+                  <h3 class="text-white text-lg font-bold font-body text-center mb-4 flex-grow">${game.title}</h3>
+                  <div class="mt-auto flex justify-center items-center gap-x-4">
+                      ${game.androidUrl ? androidIcon : ''}
+                      ${game.iosUrl ? iosIcon : ''}
+                  </div>
+              </div>
+          </article>
+        `;
       }).join('');
 
       gameGrid.innerHTML = gameCardsHTML;
