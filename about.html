@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - The Under Cats</title>
+  <link rel="icon" type="image/png" href="https://play-lh.googleusercontent.com/2GPZQk20ItKUFiq6ljOWCD9-q6TD2IdBLWqezpGUWR3j_b_NxN0NlObSGhU5Xdr0UZ1c=s94-rw">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-color: #0a0a1a;
+      --text-color: #dfe0e4;
+      --primary-glow-color: #05d9e8;
+      --card-bg-color: #1a1a2e;
+      --font-title: 'Orbitron', sans-serif;
+      --font-body: 'Play', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-body);
+    }
+
+    .font-title {
+      font-family: var(--font-title);
+    }
+
+    .main-title {
+      animation: pulsate 2.5s ease-in-out infinite alternate;
+      text-shadow:
+              0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 15px var(--primary-glow-color),
+              0 0 25px var(--primary-glow-color),
+              0 0 35px var(--primary-glow-color);
+    }
+
+    @keyframes pulsate {
+      100% {
+        text-shadow:
+                0 0 7px #fff,
+                0 0 12px #fff,
+                0 0 22px var(--primary-glow-color),
+                0 0 42px var(--primary-glow-color),
+                0 0 82px var(--primary-glow-color);
+      }
+      0% {
+        text-shadow:
+                0 0 4px #fff,
+                0 0 8px #fff,
+                0 0 12px var(--primary-glow-color),
+                0 0 20px var(--primary-glow-color),
+                0 0 38px var(--primary-glow-color);
+      }
+    }
+    
+    .content-box h2 {
+        color: var(--primary-glow-color);
+        font-family: var(--font-title);
+        border-bottom: 1px solid rgba(5, 217, 232, 0.3);
+    }
+    
+    .content-box a {
+        color: var(--primary-glow-color);
+        font-weight: bold;
+        text-decoration: none;
+        transition: text-shadow 0.3s ease;
+    }
+    
+    .content-box a:hover {
+        text-shadow: 0 0 8px var(--primary-glow-color);
+    }
+
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+<header class="text-center py-12 px-4">
+  <h1 class="font-title text-4xl md:text-5xl text-white font-bold uppercase tracking-wider">
+    <a href="index.html" class="inline-flex items-center justify-center gap-x-4" title="The Under Cats">
+      <span class="main-title">About Us</span>
+    </a>
+  </h1>
+</header>
+
+<main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="bg-card-bg-color bg-opacity-50 rounded-lg p-6 md:p-10 shadow-lg border border-primary-glow-color/20 content-box">
+      
+      <p class="mt-4 text-gray-300">Welcome to **The Under Cats**, where creative ideas and a passion for puzzle games come to life.</p>
+
+      <h2 class="text-2xl font-bold mt-6 mb-3 pb-2">Our Mission</h2>
+      <p class="text-gray-300">We are an independent game studio with a simple goal: to create puzzle games that not only challenge the mind but also bring joy and relaxation. We believe every game is an adventure in thinking, and we strive to meticulously craft each product, from adorable graphics to captivating gameplay.</p>
+
+      <h2 class="text-2xl font-bold mt-6 mb-3 pb-2">The Team</h2>
+      <p class="text-gray-300">The Under Cats is home to developers, artists, and dreamers who share a love for two things: cats and challenging puzzles. We work with all our heart to turn unique ideas into interactive experiences you can enjoy anywhere.</p>
+
+      <h2 class="text-2xl font-bold mt-6 mb-3 pb-2">Contact Us</h2>
+      <p class="text-gray-300">We're always listening! For any feedback, questions, or just to say hello, please don't hesitate to email us at: <a href="mailto:khang1023@gmail.com">khang1023@gmail.com</a>.</p>
+
+      <p class="mt-8 text-center">Thank you for joining us on our journey at The Under Cats!</p>
+  </div>
+</main>
+
+<footer class="text-center py-6 px-4 mt-auto bg-black bg-opacity-20">
+  <p class="text-sm text-gray-400 opacity-70">&copy; 2024 The Under Cats. All games are the property of their respective owners.</p>
+</footer>
+
+</body>
+</html>
