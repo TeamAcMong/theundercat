@@ -235,3 +235,8 @@ voisetech.com, 1066, RESELLER
 xandr.com, 17779, RESELLER
 
 google.com, pub-4822090342374266, DIRECT, f08c47fec0942fa0
+
+targetbetter.com, 82228, RESELLER
+media.net, 8CUH46N56, RESELLER
+programmaticx.ai, 84448, RESELLER, b42d42eb28400efa
+triplelift.com, 14716, RESELLER, 6c33edb13117fd86
