@@ -233,3 +233,5 @@ videoheroes.tv, 212428, RESELLER, 064bc410192443d8
 voisetech.com, 1066, RESELLER
 
 xandr.com, 17779, RESELLER
+
+google.com, pub-4822090342374266, DIRECT, f08c47fec0942fa0
