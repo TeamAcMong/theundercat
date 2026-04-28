@@ -36,9 +36,9 @@ export const games = [
       'Star rating system',
       'Fun for all ages',
     ],
-    image: 'https://play-lh.googleusercontent.com/1AvrP8TBAE6K1Afl0WmpqRvMx4lQHVk1zmuS7KhOMknHwlpRJpFcSMUFLA9C8q0Vbf8D=w240-h480-rw',
+    image: 'https://play-lh.googleusercontent.com/1AvrP8TBAE6K1Afl0WmpqRvMx4lQHVk1zmuS7KhOMknHwlpRJpFcSMUFLA9C8q0Vbf8D',
     screenshots: [
-      'https://play-lh.googleusercontent.com/1AvrP8TBAE6K1Afl0WmpqRvMx4lQHVk1zmuS7KhOMknHwlpRJpFcSMUFLA9C8q0Vbf8D=w240-h480-rw',
+      'https://play-lh.googleusercontent.com/1AvrP8TBAE6K1Afl0WmpqRvMx4lQHVk1zmuS7KhOMknHwlpRJpFcSMUFLA9C8q0Vbf8D',
     ],
     rating: 4.4,
     downloads: '20K+',
@@ -84,9 +84,9 @@ export const games = [
       'Boss battles every 5 levels',
       'Satisfying hit feedback',
     ],
-    image: 'https://play-lh.googleusercontent.com/aB8cSFdDO6scs6Jbxnjo0sDoG6cYs1YrXn7JKMictm3FIZOGemTOHdXkVpk1-ZoivyE=w240-h480-rw',
+    image: 'https://play-lh.googleusercontent.com/aB8cSFdDO6scs6Jbxnjo0sDoG6cYs1YrXn7JKMictm3FIZOGemTOHdXkVpk1-ZoivyE',
     screenshots: [
-      'https://play-lh.googleusercontent.com/aB8cSFdDO6scs6Jbxnjo0sDoG6cYs1YrXn7JKMictm3FIZOGemTOHdXkVpk1-ZoivyE=w240-h480-rw',
+      'https://play-lh.googleusercontent.com/aB8cSFdDO6scs6Jbxnjo0sDoG6cYs1YrXn7JKMictm3FIZOGemTOHdXkVpk1-ZoivyE',
     ],
     rating: 4.3,
     downloads: '10K+',

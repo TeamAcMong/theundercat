@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -61,6 +62,9 @@ export default function Navbar() {
             </li>
           ))}
           <li>
+            <ThemeSwitcher />
+          </li>
+          <li>
             <a
               href="https://play.google.com/store/apps/dev?id=5609148763993571299"
               target="_blank"
@@ -101,14 +105,18 @@ export default function Navbar() {
                 </li>
               ))}
               <li style={{ animationDelay: `${navLinks.length * 0.05}s` }}>
-                <a
-                  href="https://play.google.com/store/apps/dev?id=5609148763993571299"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="navbar__cta navbar__cta--mobile"
-                >
-                  Play Store ↗
-                </a>
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                  <ThemeSwitcher />
+                  <a
+                    href="https://play.google.com/store/apps/dev?id=5609148763993571299"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="navbar__cta navbar__cta--mobile"
+                    style={{ margin: 0 }}
+                  >
+                    Play Store ↗
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

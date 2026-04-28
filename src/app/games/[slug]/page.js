@@ -30,7 +30,7 @@ export default async function GameDetailPage({ params }) {
       </div>
 
       <header className="page-header" style={{ paddingTop: 'var(--sp-8)' }}>
-        <h1 className="page-header__title neon-glow fade-in delay-1">{game.title}</h1>
+        <h1 className="page-header__title fade-in delay-1">{game.title}</h1>
         <p className="section-desc fade-in delay-2">{game.tagline}</p>
       </header>
 
@@ -41,15 +41,15 @@ export default async function GameDetailPage({ params }) {
             <img src={game.image} alt={game.title} className="game-detail__image" />
             <div className="game-detail__meta">
               <div className="game-detail__stat">
-                <span className="game-detail__stat-value neon-glow--cyan">{game.rating}★</span>
+                <span className="game-detail__stat-value">{game.rating}★</span>
                 <span className="game-detail__stat-label">Rating</span>
               </div>
               <div className="game-detail__stat">
-                <span className="game-detail__stat-value neon-glow--cyan">{game.downloads}</span>
+                <span className="game-detail__stat-value">{game.downloads}</span>
                 <span className="game-detail__stat-label">Downloads</span>
               </div>
               <div className="game-detail__stat">
-                <span className="game-detail__stat-value neon-glow--cyan">{game.category}</span>
+                <span className="game-detail__stat-value">{game.category}</span>
                 <span className="game-detail__stat-label">Category</span>
               </div>
             </div>

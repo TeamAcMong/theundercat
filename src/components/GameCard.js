@@ -3,43 +3,10 @@
 import Link from 'next/link';
 
 export default function GameCard({ game, index }) {
-  const handleMouseMove = (e) => {
-    // Only apply on desktop
-    if (window.matchMedia('(max-width: 768px)').matches) return;
-    
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    // Calculate rotation (-8 to 8 degrees)
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
-    
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    card.style.boxShadow = `
-      ${-rotateY}px ${rotateX}px 20px rgba(124, 58, 237, 0.2),
-      0 0 40px rgba(6, 182, 212, 0.1) inset
-    `;
-  };
-
-  const handleMouseLeave = (e) => {
-    const card = e.currentTarget;
-    card.style.transform = '';
-    card.style.boxShadow = '';
-  };
-
   return (
-    <article 
-      className={`game-card fade-in delay-${index + 1}`}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
+    <article className={`game-card fade-in delay-${index + 1}`}>
       <Link href={`/games/${game.slug}`} className="game-card__link">
-        <div className="game-card__stamp">CONFIDENTIAL</div>
+        <div className="game-card__tape"></div>
         <div className="game-card__image-wrapper">
           <img
             src={game.image}
@@ -48,7 +15,7 @@ export default function GameCard({ game, index }) {
             loading="lazy"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = 'https://placehold.co/600x400/1E1C35/A78BFA?text=Coming+Soon';
+              e.target.src = 'https://placehold.co/600x400/fdfbf7/3b82f6?text=Meow!+Soon...';
             }}
           />
         </div>

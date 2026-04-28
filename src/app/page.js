@@ -1,5 +1,6 @@
 import GameCard from '@/components/GameCard';
 import ScrambleText from '@/components/ScrambleText';
+import MiniGame from '@/components/MiniGame';
 import { games, studioInfo } from '@/data/games';
 
 export default function HomePage() {
@@ -18,7 +19,7 @@ export default function HomePage() {
             alt="The Under Cats Logo"
             className="hero__logo float"
           />
-          <h1 className="hero__title neon-glow">
+          <h1 className="hero__title">
             <ScrambleText text="The Under Cats" />
           </h1>
         </a>
@@ -29,15 +30,15 @@ export default function HomePage() {
         {/* Stats */}
         <div className="hero__stats fade-in delay-3">
           <div className="hero__stat">
-            <span className="hero__stat-number neon-glow--cyan">{games.length}</span>
+            <span className="hero__stat-number">{games.length}</span>
             <span className="hero__stat-label">Games</span>
           </div>
           <div className="hero__stat">
-            <span className="hero__stat-number neon-glow--cyan">100K+</span>
+            <span className="hero__stat-number">100K+</span>
             <span className="hero__stat-label">Downloads</span>
           </div>
           <div className="hero__stat">
-            <span className="hero__stat-number neon-glow--cyan">4.5★</span>
+            <span className="hero__stat-number">4.5★</span>
             <span className="hero__stat-label">Avg Rating</span>
           </div>
         </div>
@@ -46,10 +47,10 @@ export default function HomePage() {
       {/* ── Games Section ── */}
       <main className="games-section">
         <div className="section-header fade-in delay-2">
-          <span className="section-badge">🎯 The Loot</span>
-          <h2 className="section-title">High-Value Targets</h2>
+          <span className="section-badge">📓 Our Diary</span>
+          <h2 className="section-title">Latest Mischiefs</h2>
           <p className="section-desc">
-            Classified files of the puzzles we've cracked. Your mission is to solve them.
+            A scrapbook of all the fun, relaxing, and brain-teasing games we've built.
           </p>
         </div>
 
@@ -63,30 +64,30 @@ export default function HomePage() {
       {/* ── Features Section ── */}
       <section className="features-section">
         <div className="section-header fade-in">
-          <span className="section-badge">🥷 Modus Operandi</span>
-          <h2 className="section-title">Our Criminal Record</h2>
+          <span className="section-badge">✏️ How We Play</span>
+          <h2 className="section-title">What Makes Us Purr</h2>
         </div>
 
         <div className="features-grid">
           <div className="feature-card fade-in delay-1">
             <span className="feature-card__icon">🧠</span>
-            <h3 className="feature-card__title">Brain Heists</h3>
+            <h3 className="feature-card__title">Brain Teasers</h3>
             <p className="feature-card__desc">
-              Every puzzle is a vault waiting to be picked. We steal your boredom, you unlock logic.
+              Every puzzle is a little adventure to stretch your mind and spark joy.
             </p>
           </div>
           <div className="feature-card fade-in delay-2">
-            <span className="feature-card__icon">🕶️</span>
-            <h3 className="feature-card__title">Stealth Art</h3>
+            <span className="feature-card__icon">🎨</span>
+            <h3 className="feature-card__title">Cozy Art</h3>
             <p className="feature-card__desc">
-              Sharp visuals, slick UI, and an atmosphere thicker than a smoke grenade.
+              Warm visuals, hand-drawn styles, and relaxing vibes to soothe your day.
             </p>
           </div>
           <div className="feature-card fade-in delay-3">
-            <span className="feature-card__icon">🏃‍♂️</span>
-            <h3 className="feature-card__title">Fast Getaway</h3>
+            <span className="feature-card__icon">🐈</span>
+            <h3 className="feature-card__title">Smooth Play</h3>
             <p className="feature-card__desc">
-              Lightweight games optimized to run smoothly so you can grab the loot and run.
+              Lightweight games optimized to run smoothly so you can chill anytime, anywhere.
             </p>
           </div>
         </div>
@@ -117,10 +118,15 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Mini Game Break ── */}
+      <section className="minigame-section">
+        <MiniGame />
+      </section>
+
       {/* ── CTA Section ── */}
       <section className="cta-section">
         <div className="cta-box fade-in">
-          <h2 className="cta-title neon-glow">
+          <h2 className="cta-title">
             Ready to Play?
           </h2>
           <p className="cta-desc">

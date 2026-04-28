@@ -1,23 +1,38 @@
-import { Orbitron, JetBrains_Mono } from 'next/font/google';
+import { Caveat, Nunito, Orbitron, JetBrains_Mono } from 'next/font/google';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import BackToTop from '@/components/BackToTop';
 import CursorGlow from '@/components/CursorGlow';
 import EasterEgg from '@/components/EasterEgg';
 import CctvHud from '@/components/CctvHud';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
 
-const orbitron = Orbitron({
+const caveat = Caveat({
   subsets: ['latin'],
-  weight: ['700', '900'],
-  variable: '--font-display',
+  weight: ['400', '700'],
+  variable: '--font-diary-display',
   display: 'swap',
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-body',
+  weight: ['400', '700', '900'],
+  variable: '--font-diary-body',
+  display: 'swap',
+});
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-heist-display',
+  display: 'swap',
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-heist-body',
   display: 'swap',
 });
 
@@ -56,28 +71,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${jetbrainsMono.variable}`}>
-      <body className="scanlines">
-        {/* Ambient Effects */}
-        <CursorGlow />
-        <EasterEgg />
-        <div className="bg-gradient-animated" aria-hidden="true" />
-        <div className="grid-pattern" aria-hidden="true" />
-        
-        {/* Security Searchlights */}
-        <div className="searchlights" aria-hidden="true">
-          <div className="searchlight searchlight-1"></div>
-          <div className="searchlight searchlight-2"></div>
-        </div>
-
-        {/* CCTV Camera HUD */}
-        <CctvHud />
-        
-        <Navbar />
-        <div className="caution-tape" aria-hidden="true"></div>
-        {children}
-        <Footer />
-        <BackToTop />
+    <html lang="en" className={`${caveat.variable} ${nunito.variable} ${orbitron.variable} ${jetbrains.variable}`}>
+      <body className="theme-diary notebook-paper">
+        <ThemeProvider>
+          {/* Ambient Effects */}
+          <EasterEgg />
+          <CctvHud />
+          <div className="bg-gradient-animated" aria-hidden="true" />
+          <div className="grid-pattern" aria-hidden="true" />
+          
+          <Navbar />
+          {children}
+          <Footer />
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

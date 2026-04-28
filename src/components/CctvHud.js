@@ -1,7 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useTheme } from './ThemeProvider';
 
 export default function CctvHud() {
+  const { theme } = useTheme();
   const [timeStr, setTimeStr] = useState('');
 
   const [uvMode, setUvMode] = useState(false);
@@ -28,6 +30,8 @@ export default function CctvHud() {
       document.body.classList.remove('uv-mode-active');
     }
   };
+
+  if (theme !== 'heist') return null;
 
   return (
     <>
