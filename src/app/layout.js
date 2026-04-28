@@ -1,5 +1,6 @@
 import { Orbitron, JetBrains_Mono } from 'next/font/google';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import BackToTop from '@/components/BackToTop';
 import './globals.css';
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
       <body className="scanlines">
         <div className="bg-gradient-animated" aria-hidden="true" />
         <div className="grid-pattern" aria-hidden="true" />
+        <Navbar />
         {children}
         <Footer />
         <BackToTop />

@@ -91,6 +91,31 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Social Proof / Reviews ── */}
+      <section className="reviews-section">
+        <div className="section-header fade-in">
+          <span className="section-badge">💬 Player Love</span>
+          <h2 className="section-title">What Players Say</h2>
+        </div>
+        <div className="reviews-grid">
+          <div className="review-card fade-in delay-1">
+            <div className="review-card__stars">★★★★★</div>
+            <p className="review-card__text">"Triple Meow is so addictive! The cats are adorable and the puzzles are just right — not too easy, not too hard."</p>
+            <span className="review-card__author">— Player on Google Play</span>
+          </div>
+          <div className="review-card fade-in delay-2">
+            <div className="review-card__stars">★★★★★</div>
+            <p className="review-card__text">"Throw Master is hilarious! My kids and I can't stop laughing. Great physics puzzles with creative level design."</p>
+            <span className="review-card__author">— Player on Google Play</span>
+          </div>
+          <div className="review-card fade-in delay-3">
+            <div className="review-card__stars">★★★★☆</div>
+            <p className="review-card__text">"Seeker is perfect for winding down. The scenes are beautifully detailed and finding objects is so satisfying."</p>
+            <span className="review-card__author">— Player on Google Play</span>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA Section ── */}
       <section className="cta-section">
         <div className="cta-box fade-in">
