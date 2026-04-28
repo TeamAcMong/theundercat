@@ -1,4 +1,4 @@
-import Header from '@/components/Header';
+import Link from 'next/link';
 import { studioInfo } from '@/data/games';
 
 export const metadata = {
@@ -9,9 +9,15 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Header compact title="About Us" />
-      <main className="page-main page-main--narrow">
-        <div className="content-box">
+      <header className="page-header">
+        <h1 className="page-header__title neon-glow fade-in">About Us</h1>
+        <Link href="/" className="page-header__back fade-in delay-2">
+          ← Back to Home
+        </Link>
+      </header>
+
+      <main className="page-main">
+        <div className="content-box fade-in delay-3">
           <p>
             Welcome to <strong>The Under Cats</strong>, where creative ideas and
             a passion for puzzle games come to life.
@@ -42,7 +48,7 @@ export default function AboutPage() {
           </p>
 
           <p className="closing-text">
-            Thank you for joining us on our journey at The Under Cats!
+            Thank you for joining us on our journey at The Under Cats! 🐱
           </p>
         </div>
       </main>

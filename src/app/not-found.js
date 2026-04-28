@@ -6,24 +6,35 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <main className="page-main" style={{ textAlign: 'center', paddingTop: '6rem' }}>
-      <h1 className="neon-glow" style={{ fontSize: '5rem', marginBottom: '1rem' }}>
+    <main style={{
+      flexGrow: 1,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      padding: '6rem 1rem',
+    }}>
+      <h1 className="neon-glow fade-in" style={{
+        fontFamily: 'var(--font-display)',
+        fontSize: 'clamp(5rem, 15vw, 10rem)',
+        fontWeight: 900,
+        color: 'var(--text-primary)',
+        marginBottom: '0.5rem',
+      }}>
         404
       </h1>
-      <p style={{ fontSize: '1.25rem', color: 'var(--color-text-body)', marginBottom: '2rem' }}>
-        Oops! This page wandered off like a curious cat.
+      <p className="fade-in delay-2" style={{
+        fontSize: '1.125rem',
+        color: 'var(--text-muted)',
+        marginBottom: '2rem',
+        maxWidth: '400px',
+      }}>
+        Oops! This page wandered off like a curious cat. 🐱
       </p>
       <Link
         href="/"
-        style={{
-          display: 'inline-block',
-          padding: '0.75rem 2rem',
-          backgroundColor: 'var(--color-accent)',
-          color: 'var(--color-bg-primary)',
-          borderRadius: 'var(--radius-lg)',
-          fontWeight: 700,
-          transition: 'opacity 0.3s ease',
-        }}
+        className="cta-button fade-in delay-3"
       >
         ← Back to Home
       </Link>

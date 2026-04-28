@@ -1,4 +1,4 @@
-import Header from '@/components/Header';
+import Link from 'next/link';
 import { studioInfo } from '@/data/games';
 
 export const metadata = {
@@ -9,9 +9,15 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Header compact title="Privacy Policy" />
-      <main className="page-main page-main--narrow">
-        <div className="content-box">
+      <header className="page-header">
+        <h1 className="page-header__title neon-glow fade-in">Privacy Policy</h1>
+        <Link href="/" className="page-header__back fade-in delay-2">
+          ← Back to Home
+        </Link>
+      </header>
+
+      <main className="page-main">
+        <div className="content-box fade-in delay-3">
           <p className="effective-date">
             <strong>Effective Date:</strong> 09/06/2025
           </p>

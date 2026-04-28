@@ -3,15 +3,26 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <nav className="nav-links">
-        <Link href="/about" className="nav-link">About Us</Link>
-        <span className="nav-divider">|</span>
-        <Link href="/terms" className="nav-link">Terms &amp; Conditions</Link>
-        <span className="nav-divider">|</span>
-        <Link href="/privacy-policy" className="nav-link">Privacy Policy</Link>
+      <nav className="footer-nav">
+        <Link href="/about" className="footer-link">About</Link>
+        <span className="footer-divider">·</span>
+        <Link href="/blog" className="footer-link">Blog</Link>
+        <span className="footer-divider">·</span>
+        <Link href="/faq" className="footer-link">FAQ</Link>
+        <span className="footer-divider">·</span>
+        <Link href="/contact" className="footer-link">Contact</Link>
+        <span className="footer-divider">·</span>
+        <Link href="/press" className="footer-link">Press</Link>
+        <span className="footer-divider">·</span>
+        <Link href="/changelog" className="footer-link">Changelog</Link>
       </nav>
-      <p className="site-footer__copy">
-        &copy; {new Date().getFullYear()} The Under Cats. All games are the property of their respective owners.
+      <nav className="footer-nav" style={{ marginBottom: 'var(--sp-4)', opacity: 0.5 }}>
+        <Link href="/terms" className="footer-link">Terms</Link>
+        <span className="footer-divider">·</span>
+        <Link href="/privacy-policy" className="footer-link">Privacy</Link>
+      </nav>
+      <p className="footer-copy">
+        © {new Date().getFullYear()} The Under Cats. All games are the property of their respective owners.
       </p>
     </footer>
   );
