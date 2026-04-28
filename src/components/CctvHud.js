@@ -36,7 +36,6 @@ export default function CctvHud() {
           <div className="cctv-rec"><span className="cctv-dot"></span> REC</div>
         </div>
         <div className="cctv-bottom-center" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <div className="cctv-cam">CAM 04 - VAULT</div>
           <button 
             className={`uv-toggle ${uvMode ? 'uv-active' : ''}`}
             onClick={toggleUvMode}

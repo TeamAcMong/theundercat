@@ -2071,6 +2071,32 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(2px);
 }
 
+/* Mobile Responsive CCTV HUD */
+@media (max-width: 768px) {
+  .cctv-cam {
+    display: none; /* Hide CAM text on mobile to save space */
+  }
+  
+  .cctv-time {
+    display: none; /* Hide timer on mobile */
+  }
+  
+  .cctv-bottom-center {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: var(--sp-4);
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+  
+  .uv-toggle {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+}
+
 /* ========================================
    🚧 Laser Tripwire & Stamps
    ======================================== */

@@ -34,11 +34,20 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'The Under Cats',
+    images: [
+      {
+        url: 'https://play-lh.googleusercontent.com/2GPZQk20ItKUFiq6ljOWCD9-q6TD2IdBLWqezpGUWR3j_b_NxN0NlObSGhU5Xdr0UZ1c=s1024',
+        width: 1024,
+        height: 1024,
+        alt: 'The Under Cats Studio Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Under Cats — Indie Puzzle Game Studio',
     description: 'Brain-teasing puzzle games crafted with love.',
+    images: ['https://play-lh.googleusercontent.com/2GPZQk20ItKUFiq6ljOWCD9-q6TD2IdBLWqezpGUWR3j_b_NxN0NlObSGhU5Xdr0UZ1c=s1024'],
   },
   icons: {
     icon: 'https://play-lh.googleusercontent.com/2GPZQk20ItKUFiq6ljOWCD9-q6TD2IdBLWqezpGUWR3j_b_NxN0NlObSGhU5Xdr0UZ1c=s94-rw',
