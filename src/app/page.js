@@ -1,4 +1,5 @@
 import GameCard from '@/components/GameCard';
+import ScrambleText from '@/components/ScrambleText';
 import { games, studioInfo } from '@/data/games';
 
 export default function HomePage() {
@@ -18,7 +19,7 @@ export default function HomePage() {
             className="hero__logo float"
           />
           <h1 className="hero__title neon-glow">
-            The Under Cats
+            <ScrambleText text="The Under Cats" />
           </h1>
         </a>
         <p className="hero__tagline fade-in delay-2">
@@ -45,10 +46,10 @@ export default function HomePage() {
       {/* ── Games Section ── */}
       <main className="games-section">
         <div className="section-header fade-in delay-2">
-          <span className="section-badge">🎮 Our Collection</span>
-          <h2 className="section-title">Featured Games</h2>
+          <span className="section-badge">🎯 The Loot</span>
+          <h2 className="section-title">High-Value Targets</h2>
           <p className="section-desc">
-            Handcrafted puzzle games that challenge your mind and spark your creativity.
+            Classified files of the puzzles we've cracked. Your mission is to solve them.
           </p>
         </div>
 
@@ -62,30 +63,30 @@ export default function HomePage() {
       {/* ── Features Section ── */}
       <section className="features-section">
         <div className="section-header fade-in">
-          <span className="section-badge">✨ Why Us</span>
-          <h2 className="section-title">What Makes Us Different</h2>
+          <span className="section-badge">🥷 Modus Operandi</span>
+          <h2 className="section-title">Our Criminal Record</h2>
         </div>
 
         <div className="features-grid">
           <div className="feature-card fade-in delay-1">
-            <span className="feature-card__icon">🧩</span>
-            <h3 className="feature-card__title">Brain Teasers</h3>
+            <span className="feature-card__icon">🧠</span>
+            <h3 className="feature-card__title">Brain Heists</h3>
             <p className="feature-card__desc">
-              Every game is designed to challenge your logic and problem-solving skills.
+              Every puzzle is a vault waiting to be picked. We steal your boredom, you unlock logic.
             </p>
           </div>
           <div className="feature-card fade-in delay-2">
-            <span className="feature-card__icon">🎨</span>
-            <h3 className="feature-card__title">Adorable Art</h3>
+            <span className="feature-card__icon">🕶️</span>
+            <h3 className="feature-card__title">Stealth Art</h3>
             <p className="feature-card__desc">
-              Charming visuals and cute characters that make gaming a joy.
+              Sharp visuals, slick UI, and an atmosphere thicker than a smoke grenade.
             </p>
           </div>
           <div className="feature-card fade-in delay-3">
-            <span className="feature-card__icon">📱</span>
-            <h3 className="feature-card__title">Play Anywhere</h3>
+            <span className="feature-card__icon">🏃‍♂️</span>
+            <h3 className="feature-card__title">Fast Getaway</h3>
             <p className="feature-card__desc">
-              Lightweight games that run smoothly on any device, anytime.
+              Lightweight games optimized to run smoothly so you can grab the loot and run.
             </p>
           </div>
         </div>

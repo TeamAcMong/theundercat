@@ -2,6 +2,9 @@ import { Orbitron, JetBrains_Mono } from 'next/font/google';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import BackToTop from '@/components/BackToTop';
+import CursorGlow from '@/components/CursorGlow';
+import EasterEgg from '@/components/EasterEgg';
+import CctvHud from '@/components/CctvHud';
 import './globals.css';
 
 const orbitron = Orbitron({
@@ -46,9 +49,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${jetbrainsMono.variable}`}>
       <body className="scanlines">
+        {/* Ambient Effects */}
+        <CursorGlow />
+        <EasterEgg />
         <div className="bg-gradient-animated" aria-hidden="true" />
         <div className="grid-pattern" aria-hidden="true" />
+        
+        {/* Security Searchlights */}
+        <div className="searchlights" aria-hidden="true">
+          <div className="searchlight searchlight-1"></div>
+          <div className="searchlight searchlight-2"></div>
+        </div>
+
+        {/* CCTV Camera HUD */}
+        <CctvHud />
+        
         <Navbar />
+        <div className="caution-tape" aria-hidden="true"></div>
         {children}
         <Footer />
         <BackToTop />

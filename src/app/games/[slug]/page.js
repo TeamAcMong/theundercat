@@ -25,8 +25,11 @@ export default async function GameDetailPage({ params }) {
 
   return (
     <>
-      <header className="page-header">
+      <div className="sticky-back-nav">
         <Link href="/" className="page-header__back fade-in">← Back to Home</Link>
+      </div>
+
+      <header className="page-header" style={{ paddingTop: 'var(--sp-8)' }}>
         <h1 className="page-header__title neon-glow fade-in delay-1">{game.title}</h1>
         <p className="section-desc fade-in delay-2">{game.tagline}</p>
       </header>
@@ -103,6 +106,7 @@ export default async function GameDetailPage({ params }) {
             </div>
           </section>
         )}
+
       </main>
     </>
   );

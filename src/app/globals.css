@@ -2,37 +2,37 @@
 
 /* ========================================
    🎮 THE UNDER CATS — Design System
-   Style: Retro-Futurism / Cyberpunk
-   Palette: Gaming (Neon Purple + Rose)
+   Style: Cat Burglar / Stealth Heist
+   Palette: Night Shadow + Laser Red + Vault Gold
    Fonts: Orbitron / JetBrains Mono
    ======================================== */
 
 /* ── Design Tokens ── */
 :root {
-  /* Colors — Gaming Palette */
-  --primary: #7C3AED;
-  --primary-light: #A78BFA;
-  --primary-dark: #5B21B6;
-  --secondary: #06B6D4;
-  --secondary-light: #22D3EE;
-  --accent: #F43F5E;
-  --accent-light: #FB7185;
-  --success: #22C55E;
+  /* Colors — Heist Palette */
+  --primary: #DC2626;
+  --primary-light: #F87171;
+  --primary-dark: #991B1B;
+  --secondary: #F59E0B;
+  --secondary-light: #FCD34D;
+  --accent: #10B981;
+  --accent-light: #34D399;
+  --success: #10B981;
 
-  --bg-primary: #0F0F23;
-  --bg-surface: #1E1C35;
-  --bg-elevated: #2A2745;
-  --bg-overlay: rgba(15, 15, 35, 0.85);
-  --bg-glass: rgba(30, 28, 53, 0.6);
+  --bg-primary: #050505;
+  --bg-surface: #121212;
+  --bg-elevated: #1A1A1A;
+  --bg-overlay: rgba(5, 5, 5, 0.85);
+  --bg-glass: rgba(18, 18, 18, 0.6);
 
-  --text-primary: #F1F5F9;
-  --text-body: #CBD5E1;
-  --text-muted: #64748B;
-  --text-accent: #A78BFA;
+  --text-primary: #F3F4F6;
+  --text-body: #9CA3AF;
+  --text-muted: #4B5563;
+  --text-accent: #F87171;
 
-  --border-default: rgba(124, 58, 237, 0.2);
-  --border-hover: rgba(124, 58, 237, 0.5);
-  --border-glow: rgba(6, 182, 212, 0.3);
+  --border-default: rgba(220, 38, 38, 0.2);
+  --border-hover: rgba(220, 38, 38, 0.5);
+  --border-glow: rgba(245, 158, 11, 0.3);
 
   /* Typography */
   --font-display: 'Orbitron', sans-serif;
@@ -57,8 +57,8 @@
   --radius-xl: 1.5rem;
 
   --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.4);
-  --shadow-glow-cyan: 0 0 30px rgba(6, 182, 212, 0.4);
+  --shadow-glow-purple: 0 0 30px rgba(220, 38, 38, 0.4);
+  --shadow-glow-cyan: 0 0 40px rgba(245, 158, 11, 0.3);
   --shadow-glow-rose: 0 0 20px rgba(244, 63, 94, 0.4);
 
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -355,6 +355,26 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+  border-left: 1px solid var(--border-default);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.5);
+  border-radius: 10px;
+  border: 2px solid var(--bg-deep);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
 /* ── Base ── */
 * { box-sizing: border-box; }
 
@@ -403,9 +423,9 @@ img { max-width: 100%; display: block; }
   inset: 0;
   z-index: -2;
   background: 
-    radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(244, 63, 94, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 50%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
     var(--bg-primary);
   animation: bgShift 15s ease-in-out infinite alternate;
 }
@@ -604,20 +624,30 @@ img { max-width: 100%; display: block; }
   border-color: var(--border-hover);
 }
 
-/* Card glow effect on hover */
+/* Card Laser Scanner effect on hover (Heist theme) */
 .game-card::before {
   content: '';
   position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-  z-index: -1;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
   opacity: 0;
-  transition: opacity var(--transition-normal);
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
 }
 
 .game-card:hover::before {
-  opacity: 0.15;
+  opacity: 1;
+  animation: laserScan 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes laserScan {
+  0% { top: 0; }
+  100% { top: 100%; }
 }
 
 .game-card__image-wrapper {
@@ -803,6 +833,31 @@ img { max-width: 100%; display: block; }
     transform var(--transition-fast),
     box-shadow var(--transition-fast);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(253, 224, 71, 0.4) 50%, /* Gold shine */
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  animation: lootShine 3s infinite;
+}
+
+@keyframes lootShine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
 }
 
 .cta-button:hover {
@@ -828,18 +883,48 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.06em;
 }
 
+.sticky-back-nav {
+  position: sticky;
+  top: 80px; /* Just below the fixed navbar */
+  z-index: 90;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--sp-4) var(--sp-4) 0;
+  pointer-events: none; /* Let clicks pass through the container */
+  display: flex;
+}
+
 .page-header__back {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
+  font-family: var(--font-display);
   font-size: 0.8125rem;
-  color: var(--text-muted);
-  margin-top: var(--sp-4);
-  transition: color var(--transition-fast);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(15, 15, 35, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: 9999px;
+  text-decoration: none;
+  pointer-events: auto; /* Re-enable clicks for the button itself */
+  transition: 
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .page-header__back:hover {
-  color: var(--secondary-light);
+  background: rgba(124, 58, 237, 0.2);
+  border-color: var(--secondary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-purple);
 }
 
 .page-main {
@@ -1009,8 +1094,27 @@ img { max-width: 100%; display: block; }
 }
 
 /* ========================================
-   🎬 Animations
+   🎬 Animations & Effects
    ======================================== */
+.cursor-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  mix-blend-mode: screen;
+}
+
+.cursor-glow--hover {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0, 0, 0, 0) 65%);
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -1734,4 +1838,340 @@ img { max-width: 100%; display: block; }
 .changelog-change--improve .changelog-change__badge {
   color: var(--secondary-light);
   background: rgba(6, 182, 212, 0.1);
+}
+
+/* ========================================
+   🥚 Easter Egg (Konami Code)
+   ======================================== */
+.easter-egg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 15, 35, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glitch-active {
+  animation: glitchFlash 0.1s infinite;
+}
+
+@keyframes glitchFlash {
+  0% { background: rgba(15, 15, 35, 0.95); }
+  50% { background: rgba(255, 255, 255, 0.2); }
+  100% { background: rgba(15, 15, 35, 0.95); }
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  color: #0f0;
+  font-family: var(--font-body), monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px #0f0;
+}
+
+.rain-drop {
+  position: absolute;
+  top: -100px;
+  animation: rain linear forwards;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -0.2em;
+}
+
+@keyframes rain {
+  0% { transform: translateY(-100px); opacity: 1; }
+  100% { transform: translateY(120vh); opacity: 0; }
+}
+
+.access-granted {
+  text-align: center;
+  z-index: 2;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 0.5s;
+}
+
+.access-granted h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 5rem);
+  color: #0f0;
+  margin-bottom: var(--sp-4);
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.access-granted p {
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #fff;
+}
+
+.easter-egg-glitch {
+  animation: wholeBodyGlitch 0.2s linear infinite alternate;
+}
+
+@keyframes wholeBodyGlitch {
+  0% { filter: hue-rotate(0deg) contrast(1); transform: translate(0, 0); }
+  25% { filter: hue-rotate(90deg) contrast(1.5); transform: translate(-5px, 5px); }
+  50% { filter: hue-rotate(180deg) contrast(2); transform: translate(5px, -5px); }
+  75% { filter: hue-rotate(270deg) contrast(1.5); transform: translate(-5px, -5px); }
+  100% { filter: hue-rotate(360deg) contrast(1); transform: translate(5px, 5px); }
+}
+
+@keyframes popIn {
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ========================================
+   🕵️ Classified / Redacted Text (Mystery)
+   ======================================== */
+.classified-dossier {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--sp-6);
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.redacted {
+  color: transparent;
+  background-color: var(--text-muted);
+  border-radius: 2px;
+  padding: 0 4px;
+  transition: color 0.4s ease, background-color 0.4s ease;
+  user-select: none;
+  cursor: help;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.redacted:hover {
+  color: var(--primary);
+  background-color: transparent;
+  text-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
+}
+
+/* ========================================
+   🔦 On-Load Heist Atmosphere (Searchlights & CCTV)
+   ======================================== */
+
+/* Searchlights Background */
+.searchlights {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.searchlight {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 150vw;
+  height: 200vh;
+  background: conic-gradient(from 150deg at 50% 0%, transparent 0deg, rgba(255, 255, 255, 0.04) 30deg, transparent 60deg);
+  transform-origin: 50% 0%;
+  mix-blend-mode: screen;
+}
+
+.searchlight-1 {
+  animation: sweep 8s ease-in-out infinite alternate;
+}
+
+.searchlight-2 {
+  left: 20%;
+  background: conic-gradient(from 150deg at 50% 0%, transparent 0deg, rgba(220, 38, 38, 0.03) 30deg, transparent 60deg);
+  animation: sweep 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes sweep {
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(25deg); }
+}
+
+/* CCTV HUD Overlay */
+.cctv-hud {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cctv-bottom-left {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+}
+
+.cctv-bottom-center {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cctv-bottom-right {
+  position: absolute;
+  bottom: var(--sp-4);
+  right: var(--sp-4);
+}
+
+.cctv-rec {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--primary);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.cctv-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  animation: blink 1s infinite;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cctv-cam, .cctv-time {
+  letter-spacing: 0.15em;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+/* ========================================
+   🚧 Laser Tripwire & Stamps
+   ======================================== */
+.caution-tape {
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary), 0 0 16px var(--primary);
+  position: relative;
+  z-index: 50;
+  opacity: 0.8;
+  animation: laserPulse 2s infinite alternate;
+}
+
+@keyframes laserPulse {
+  0% { opacity: 0.5; box-shadow: 0 0 4px var(--primary); }
+  100% { opacity: 1; box-shadow: 0 0 12px var(--primary), 0 0 24px var(--primary); }
+}
+
+.game-card__stamp {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  transform: rotate(25deg);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(220, 38, 38, 0.8);
+  border: 4px solid rgba(220, 38, 38, 0.8);
+  padding: 4px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 5;
+  opacity: 0.8;
+  pointer-events: none;
+  border-radius: 4px;
+  text-shadow: 0 0 10px rgba(220, 38, 38, 0.3);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.2) inset;
+}
+
+/* ========================================
+   🔦 UV Light / Blacklight Mode
+   ======================================== */
+.uv-toggle {
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  backdrop-filter: blur(2px);
+  outline: none;
+}
+
+.uv-toggle:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.uv-toggle.uv-active {
+  border-color: #a855f7;
+  color: #a855f7;
+  text-shadow: 0 0 8px #a855f7;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.3) inset;
+  background: rgba(168, 85, 247, 0.1);
+}
+
+/* UV Mode Flashlight Override */
+body.uv-mode-active .cursor-glow {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.6) 0%, rgba(168, 85, 247, 0) 60%) !important;
+  opacity: 0.8 !important;
+  mix-blend-mode: screen !important;
+}
+
+/* Hidden Clues */
+.uv-clue {
+  position: fixed;
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  color: transparent;
+  z-index: 99; /* Below HUD, above content */
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, color 0.5s ease;
+  letter-spacing: 0.2em;
+}
+
+/* When UV mode is active, make clues react to proximity (hover) */
+body.uv-mode-active .uv-clue {
+  pointer-events: auto; /* Allow hovering */
+}
+
+body.uv-mode-active .uv-clue:hover {
+  color: #d8b4fe;
+  opacity: 0.8;
+  text-shadow: 0 0 15px #a855f7, 0 0 30px #a855f7;
+  cursor: crosshair;
 }

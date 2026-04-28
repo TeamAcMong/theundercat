@@ -25,8 +25,11 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <>
-      <header className="page-header">
+      <div className="sticky-back-nav">
         <Link href="/blog" className="page-header__back fade-in">← Back to Blog</Link>
+      </div>
+
+      <header className="page-header" style={{ paddingTop: 'var(--sp-8)' }}>
         <h1 className="page-header__title neon-glow fade-in delay-1">{post.title}</h1>
         <p className="section-desc fade-in delay-2">
           {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
@@ -56,6 +59,7 @@ export default async function BlogPostPage({ params }) {
               <span key={tag} className="blog-card__tag">#{tag}</span>
             ))}
           </div>
+          
         </article>
       </main>
     </>

@@ -24,6 +24,12 @@ export default function Footer() {
       <p className="footer-copy">
         © {new Date().getFullYear()} The Under Cats. All games are the property of their respective owners.
       </p>
+      
+      <div className="classified-dossier fade-in delay-3">
+        STATUS: <span className="redacted">ACTIVE</span> | 
+        TARGET: <span className="redacted">GLOBAL PUZZLE DOMINATION</span> | 
+        CLEARANCE: <span className="redacted">LEVEL 5 CAT</span>
+      </div>
     </footer>
   );
 }
