@@ -28,7 +28,63 @@ export default function PolicyPage() {
             page outlines our key policies and guidelines.
           </p>
 
-          <h2>1. User Conduct</h2>
+          <h2>1. Privacy Policy</h2>
+          <p>
+            This section explains how we collect, use, and protect your data when
+            you use our games.
+          </p>
+
+          <h3>1.1 Information We Collect</h3>
+          <ul>
+            <li>
+              <strong>Device Information:</strong> Device type, OS, and
+              identifiers (for ads and analytics).
+            </li>
+            <li>
+              <strong>Usage Data:</strong> In-game interactions, crashes, time
+              played, etc.
+            </li>
+            <li>
+              <strong>Ad Data:</strong> Collected by Google AdMob/AdSense SDK
+              for ad performance.
+            </li>
+          </ul>
+
+          <h3>1.2 How We Use Your Information</h3>
+          <ul>
+            <li>Improve gameplay experience and performance.</li>
+            <li>Show relevant ads via Google AdMob.</li>
+            <li>Analyze usage via Google Firebase or Google Analytics.</li>
+          </ul>
+
+          <h3>1.3 Third-Party Services</h3>
+          <p>Our games may use services like:</p>
+          <ul>
+            <li>Google AdMob</li>
+            <li>Google Firebase Analytics</li>
+            <li>Google Play Services</li>
+          </ul>
+          <p>
+            View their policy:{' '}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Privacy Policy
+            </a>
+          </p>
+
+          <h3>1.4 Children&apos;s Privacy</h3>
+          <p>
+            We do not knowingly collect personal data from children under 13. If
+            discovered, such data will be deleted immediately.
+          </p>
+
+          <h3>1.5 Your Consent</h3>
+          <p>By using our games, you consent to this privacy policy.</p>
+
+          <h2>2. User Conduct</h2>
           <p>
             We expect all users to engage with our games and services in a
             respectful and fair manner. Prohibited activities include:
@@ -43,7 +99,7 @@ export default function PolicyPage() {
             Violations may result in account suspension or permanent ban.
           </p>
 
-          <h2>2. Content Ownership</h2>
+          <h2>3. Content Ownership</h2>
           <p>
             All content within our games, including graphics, audio, code, and
             game mechanics, is the intellectual property of The Under Cats. Users
@@ -51,19 +107,11 @@ export default function PolicyPage() {
             explicit permission.
           </p>
 
-          <h2>3. In-Game Purchases</h2>
+          <h2>4. In-Game Purchases</h2>
           <p>
             Some of our games may offer in-game purchases. All purchases are
             final and non-refundable unless required by law. Please review your
             purchase carefully before completing the transaction.
-          </p>
-
-          <h2>4. Data Collection and Privacy</h2>
-          <p>
-            We collect certain data to improve our games and provide relevant
-            advertisements. This includes device information, usage data, and
-            analytics. For detailed information, please refer to our{' '}
-            <Link href="/privacy-policy">Privacy Policy</Link>.
           </p>
 
           <h2>5. Cookies and Tracking</h2>
@@ -81,14 +129,7 @@ export default function PolicyPage() {
             device privacy settings.
           </p>
 
-          <h2>6. Age Restrictions</h2>
-          <p>
-            Our games are designed for general audiences. However, we do not
-            knowingly collect personal information from children under 13. If we
-            discover such data has been collected, it will be deleted immediately.
-          </p>
-
-          <h2>7. Service Availability</h2>
+          <h2>6. Service Availability</h2>
           <p>
             We strive to maintain continuous service availability, but we cannot
             guarantee uninterrupted access. We reserve the right to modify,
@@ -96,7 +137,7 @@ export default function PolicyPage() {
             time without prior notice.
           </p>
 
-          <h2>8. Updates and Changes</h2>
+          <h2>7. Updates and Changes</h2>
           <p>
             We may update these policies from time to time to reflect changes in
             our practices or legal requirements. Continued use of our services
@@ -104,14 +145,14 @@ export default function PolicyPage() {
             policies.
           </p>
 
-          <h2>9. Dispute Resolution</h2>
+          <h2>8. Dispute Resolution</h2>
           <p>
             If you have any concerns or disputes regarding our services, please
             contact us first so we can work toward a resolution. We are committed
             to addressing user concerns fairly and promptly.
           </p>
 
-          <h2>10. Contact Us</h2>
+          <h2>9. Contact Us</h2>
           <p>
             For questions, concerns, or feedback regarding these policies, please
             reach out to us at:{' '}
