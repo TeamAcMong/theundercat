@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/contact', label: 'Contact' },
   { href: '/press', label: 'Press' },
   { href: '/about', label: 'About' },
+  { href: '/policy', label: 'Policy' },
 ];
 
 export default function Navbar() {
